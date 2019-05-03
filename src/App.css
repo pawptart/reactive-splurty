@@ -1,33 +1,62 @@
-.App {
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nav-bar {
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: start;
+}
+
+.circle {
+  font-weight: bold;
+  font-style: italic;
+  position: relative;
+  top: 10px;
+  border-radius: 100%;
+  background: #f84342;
+  border: 1px solid #F7F7F7;
+  width: 80px;
+  height: 80px;
+  margin: 10px 10px;
+  color: #FFF;
+  font-size: 10px;
+  line-height: 16px;
+  transform: rotate(11deg);
+  -ms-transform: rotate(11deg); /* IE 9 */
+  -webkit-transform: rotate(11deg); /* Opera, Chrome, and Safari */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.slogan {
+  width: 60%;
+  margin-top: 30px;
+  text-align: center;
+  font-style: italic;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  list-style-type: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  width: auto;
+  margin: 5px;
+  font-size: 25px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottom-border {
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  height: 120px;
 }

@@ -4,24 +4,27 @@ class Nav extends React.Component {
 
 	render() {
 		return (
-			<nav className="nav-bar">
-				<div className="logo">
-					You<br />Can<br />Do<br />It!
-				</div>
-				<div>
-					Splurting out a little motivation when you need it
-				</div>
-				<div>
-					<ul>
-						<li>
-							Contribute
-						</li>
-						<li>
-							About
-						</li>
-					</ul>
-				</div>
-			</nav>
+			<div className="nav-container">
+				<nav className="nav-bar">				
+					<div className="circle">
+						You<br />Can<br />Do It!
+					</div>				
+					<div className="slogan">
+						Splurting out a little motivation when you need it
+					</div>
+					<div>
+						<ul className="nav-link-container">
+							<li className="nav-link">
+								Contribute
+							</li>
+							<li className="nav-link">
+								About
+							</li>
+						</ul>
+					</div>				
+				</nav>
+				<div className="bottom-border"></div>
+			</div>
 		);
 	}
 }
