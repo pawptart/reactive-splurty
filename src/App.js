@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './components/Nav';
 import Quote from './components/Quote';
 import axios from 'axios';
+import Footer from './components/Footer';
 
 class App extends React.Component {
 
@@ -29,6 +30,7 @@ class App extends React.Component {
           getQuote={this.getQuote}
           quote={quote}
         />
+        <Footer />
       </div>
     );
   }
