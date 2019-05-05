@@ -60,3 +60,36 @@ body {
   border-bottom: 1px solid rgba(0,0,0,0.1);
   height: 120px;
 }
+
+.quote-container {
+  margin: auto;
+  margin-top: 25px; 
+  width: 80%;
+  font-weight: bold;
+}
+
+.quote-id {
+  font-size: 30px;
+}
+
+.quote-saying {
+  font-size: 50px;
+}
+
+.quote-author, .quote-id {
+  font-style: italic;
+}
+
+.quote-author {
+  text-align: right;
+  font-size: 30px;
+}
+
+.id-span {
+  font-style: normal;
+  color: rgba(0,0,0,0.1);
+}
+
+.underline {
+  text-decoration: underline;
+}
