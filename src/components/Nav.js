@@ -3,6 +3,9 @@ import React from 'react';
 class Nav extends React.Component {
 
 	render() {
+
+		const { toggleShowForm } = this.props;
+
 		return (
 			<div className="nav-container">
 				<nav className="nav-bar">				
@@ -14,7 +17,10 @@ class Nav extends React.Component {
 					</div>
 					<div>
 						<ul className="nav-link-container">
-							<li className="nav-link">
+							<li 
+								className="nav-link" 
+								onClick={() => toggleShowForm()}
+							>
 								Contribute
 							</li>
 							<li className="nav-link">

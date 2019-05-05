@@ -117,6 +117,10 @@ body {
   color: gray;
 }
 
+.nav-link {
+  cursor: pointer;
+}
+
 .more-button {
   background: #f84342; 
   border: 1px solid white;

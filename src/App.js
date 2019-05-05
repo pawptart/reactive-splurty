@@ -4,13 +4,15 @@ import Nav from './components/Nav';
 import Quote from './components/Quote';
 import axios from 'axios';
 import Footer from './components/Footer';
+import Form from './components/Form';
 
 class App extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      quote: {}
+      quote: {},
+      showForm: false
     };
   }
 
@@ -20,16 +22,29 @@ class App extends React.Component {
       .catch( (err) => console.log(err.response.data) );
   }
 
+  toggleShowForm = () => {
+    console.log(this.state)
+    if (!this.state.showForm) {
+      this.setState({
+        showForm: true
+      });
+    }
+  }
+
   render() {
-    const { quote } = this.state;
+    const { quote, showForm } = this.state;
 
     return (
       <div className="App">
-        <Nav />
-        <Quote 
-          getQuote={this.getQuote}
-          quote={quote}
-        />
+        <Nav toggleShowForm={this.toggleShowForm}/>
+        { showForm ? 
+          <Form /> 
+          :
+          <Quote 
+            getQuote={this.getQuote}
+            quote={quote}
+          />
+        }
         <Footer getQuote={this.getQuote} />
       </div>
     );
