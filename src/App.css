@@ -126,4 +126,15 @@ body {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.5s;
+  outline: none;
+}
+
+.more-button:hover {
+  background: #9c2929;
+  transition: 0.5s;
+}
+
+.more-button:active {
+  transform: translateY(2px);
 }
