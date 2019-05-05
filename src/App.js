@@ -30,7 +30,7 @@ class App extends React.Component {
           getQuote={this.getQuote}
           quote={quote}
         />
-        <Footer />
+        <Footer getQuote={this.getQuote} />
       </div>
     );
   }

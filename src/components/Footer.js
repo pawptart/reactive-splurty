@@ -1,10 +1,17 @@
 import React from 'react';
 
-class Footer extends React.Component {
+class Footer extends React.Component {	
+
 	render() {
+
+		const { getQuote } = this.props;
+		
 		return (
 			<div className="footer-container">
-				<button className="more-button">
+				<button 
+					className="more-button" 
+					onClick={() => getQuote()}
+				>
 					This isn't enough, I need more
 				</button>
 				<div className="links">
