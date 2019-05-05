@@ -23,7 +23,6 @@ class App extends React.Component {
   }
 
   toggleShowForm = () => {
-    console.log(this.state)
     if (!this.state.showForm) {
       this.setState({
         showForm: true

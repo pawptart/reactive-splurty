@@ -134,11 +134,53 @@ body {
   outline: none;
 }
 
-.more-button:hover {
+.more-button:hover, .submit-button:hover {
   background: #9c2929;
   transition: 0.5s;
 }
 
 .more-button:active {
   transform: translateY(2px);
+}
+
+.form-container {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+textarea {
+  resize: none;
+}
+
+.saying-field, .author-field, .submit-button {
+  display: block;
+  margin: auto;
+  width: 75%;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.author-field {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.saying-field {
+  border-radius: 0;
+  margin-top: -1px;
+  height: 150px;
+}
+.submit-button {
+  width: calc(75% + 12px);
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background: #f84342;
+  color: white;
+  outline: none;
+  height: 45px;
+  font-size: 20px;
 }
