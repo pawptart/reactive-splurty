@@ -28,6 +28,10 @@ class App extends React.Component {
       this.setState({
         showForm: true
       });
+    } else {
+      this.setState({
+        showForm: false
+      });
     }
   }
 
@@ -38,7 +42,7 @@ class App extends React.Component {
       <div className="App">
         <Nav toggleShowForm={this.toggleShowForm}/>
         { showForm ? 
-          <Form /> 
+          <Form toggleShowForm={this.toggleShowForm}/> 
           :
           <Quote 
             getQuote={this.getQuote}

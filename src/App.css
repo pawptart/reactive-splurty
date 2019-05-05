@@ -25,6 +25,8 @@ body {
   border: 1px solid #F7F7F7;
   width: 80px;
   height: 80px;
+  min-width: 80px;
+  min-height: 80px;
   margin: 10px 10px;
   color: #FFF;
   font-size: 10px;
@@ -104,11 +106,12 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .links {
   text-align: right;
-  font-size: 15px;
+  font-size: 11px;
   color: white;
 }
 
