@@ -5,6 +5,7 @@ import Quote from './components/Quote';
 import axios from 'axios';
 import Footer from './components/Footer';
 import Form from './components/Form';
+import urlFor from './helpers/urlFor';
 
 class App extends React.Component {
 
@@ -17,7 +18,7 @@ class App extends React.Component {
   }
 
   getQuote = () => {
-    axios.get('https://splurty-tyler-porter.herokuapp.com/quotes.json')
+    axios.get(urlFor('quotes.json'))
       .then( (res) => this.setState({ quote: res.data }) )
       .catch( (err) => console.log(err.response.data) );
   }
