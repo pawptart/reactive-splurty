@@ -93,3 +93,37 @@ body {
 .underline {
   text-decoration: underline;
 }
+
+.footer-container {
+  background: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  bottom: 0px; 
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.links {
+  text-align: right;
+  font-size: 15px;
+  color: white;
+}
+
+.links a {
+  text-decoration: none;
+  color: gray;
+}
+
+.more-button {
+  background: #f84342; 
+  border: 1px solid white;
+  border-radius: 25px;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

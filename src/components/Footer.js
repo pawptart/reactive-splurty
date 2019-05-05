@@ -3,7 +3,7 @@ import React from 'react';
 class Footer extends React.Component {
 	render() {
 		return (
-			<div clasName="footer-container">
+			<div className="footer-container">
 				<button className="more-button">
 					This isn't enough, I need more
 				</button>
