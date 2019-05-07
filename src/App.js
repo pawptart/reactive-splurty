@@ -23,6 +23,19 @@ class App extends React.Component {
       .catch( (err) => console.log(err.response.data) );
   }
 
+  createQuote = (data) => {
+    axios.post(urlFor('quotes.json', 
+      {
+        saying: "this is a test",
+        author: "myself"
+      }
+    ))
+      .then( (res) => console.log(res.data) )
+      .catch( (err) => console.log(err.response.data) );
+
+    this.toggleShowForm();
+  }
+
   toggleShowForm = () => {
     if (!this.state.showForm) {
       this.setState({
@@ -42,7 +55,10 @@ class App extends React.Component {
       <div className="App">
         <Nav toggleShowForm={this.toggleShowForm}/>
         { showForm ? 
-          <Form toggleShowForm={this.toggleShowForm}/> 
+          <Form 
+            toggleShowForm={this.toggleShowForm}
+            createQuote={this.createQuote}
+          /> 
           :
           <Quote 
             getQuote={this.getQuote}

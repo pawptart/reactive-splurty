@@ -1,21 +1,40 @@
 import React from 'react';
 
 class Form extends React.Component {
-	render() {
-		
-		const { toggleShowForm } = this.props;
 
+	onSubmit(e) {
+		e.preventDefault();
+		const formData = {
+			saying: this.saying,
+			author: this.author
+		};
+		this.props.createQuote(formData);
+	}
+
+	render() {
 		return (
 			<div className="form-container">
 				<h1>Add a new quote!</h1>
-				<input className="author-field" placeholder="Author..."/>
-				<textarea className="saying-field" placeholder="Saying..."></textarea>
-				<button 
-					className="submit-button" 
-					onClick={() => toggleShowForm()}
+				<form className="quote-form"
+					onSubmit={(e) => this.onSubmit(e)}
 				>
-					Submit!
-				</button>
+					<input 
+						className="author-field" 
+						placeholder="Author..."
+						ref={(input) => this.author = input}
+					/>
+					<textarea 
+						className="saying-field" 
+						placeholder="Saying..."
+						ref={(input) => this.saying = input}
+					>
+					</textarea>
+					<button 
+						className="submit-button" 
+					>
+						Submit!
+					</button>
+				</form>
 			</div>
 		);
 	}
