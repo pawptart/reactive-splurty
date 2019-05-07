@@ -4,7 +4,7 @@ class Nav extends React.Component {
 
 	render() {
 
-		const { toggleShowForm } = this.props;
+		const { toggleShowForm, toggleShowAbout, showForm, showAbout, goBack } = this.props;
 
 		return (
 			<div className="nav-container">
@@ -17,15 +17,28 @@ class Nav extends React.Component {
 					</div>
 					<div>
 						<ul className="nav-link-container">
-							<li 
-								className="nav-link" 
-								onClick={() => toggleShowForm()}
-							>
-								Contribute
-							</li>
-							<li className="nav-link">
-								About
-							</li>
+							{ showAbout || showForm ?
+								<li className="nav-link"
+									onClick={() => goBack()}
+								>
+									Back
+								</li>	
+								: 		
+								<React.Fragment>	
+									<li 
+										className="nav-link" 
+										onClick={() => toggleShowForm()}
+									>
+										Contribute
+									</li>
+									<li 
+										className="nav-link"
+										onClick={() => toggleShowAbout()}
+									>
+										About
+									</li>			
+								</React.Fragment>						
+							}
 						</ul>
 					</div>				
 				</nav>

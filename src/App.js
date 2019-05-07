@@ -6,6 +6,7 @@ import axios from 'axios';
 import Footer from './components/Footer';
 import Form from './components/Form';
 import urlFor from './helpers/urlFor';
+import About from './components/About';
 
 class App extends React.Component {
 
@@ -13,7 +14,8 @@ class App extends React.Component {
     super();
     this.state = {
       quote: {},
-      showForm: false
+      showForm: false,
+      showAbout: false,
     };
   }
 
@@ -34,31 +36,63 @@ class App extends React.Component {
   toggleShowForm = () => {
     if (!this.state.showForm) {
       this.setState({
-        showForm: true
+        showForm: true,
+        showAbout: false
       });
     } else {
       this.setState({
+        showForm: false,
+        showAbout: false
+      });
+    }
+  }
+
+  toggleShowAbout = () => {
+    if (!this.state.showAbout) {
+      this.setState({
+        showAbout: true,
+        showForm: false
+      });
+    } else {
+      this.setState({
+        showAbout: false,
         showForm: false
       });
     }
   }
 
+  goBack = () => {
+    this.setState({
+      showAbout: false,
+      showForm: false
+    });
+  }
+
   render() {
-    const { quote, showForm } = this.state;
+    const { quote, showForm, showAbout } = this.state;
 
     return (
       <div className="App">
-        <Nav toggleShowForm={this.toggleShowForm}/>
-        { showForm ? 
-          <Form 
-            toggleShowForm={this.toggleShowForm}
-            createQuote={this.createQuote}
-          /> 
+        <Nav 
+          toggleShowForm={this.toggleShowForm}
+          toggleShowAbout={this.toggleShowAbout}
+          showAbout={this.state.showAbout}
+          showForm={this.state.showForm}
+          goBack={this.goBack}
+        />
+        { showAbout ? 
+          <About />
           :
-          <Quote 
-            getQuote={this.getQuote}
-            quote={quote}
-          />
+          showForm ? 
+            <Form 
+              toggleShowForm={this.toggleShowForm}
+              createQuote={this.createQuote}
+            /> 
+            :
+            <Quote 
+              getQuote={this.getQuote}
+              quote={quote}
+            />
         }
         <Footer getQuote={this.getQuote} />
       </div>
