@@ -24,12 +24,7 @@ class App extends React.Component {
   }
 
   createQuote = (data) => {
-    axios.post(urlFor('quotes.json', 
-      {
-        saying: "this is a test",
-        author: "myself"
-      }
-    ))
+    axios.post(urlFor('quotes.json'), data)
       .then( (res) => console.log(res.data) )
       .catch( (err) => console.log(err.response.data) );
 

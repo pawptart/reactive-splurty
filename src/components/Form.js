@@ -5,8 +5,8 @@ class Form extends React.Component {
 	onSubmit(e) {
 		e.preventDefault();
 		const formData = {
-			saying: this.saying,
-			author: this.author
+			saying: this.saying.value,
+			author: this.author.value
 		};
 		this.props.createQuote(formData);
 	}
