@@ -191,3 +191,53 @@ textarea {
   height: 45px;
   font-size: 20px;
 }
+
+.about-container {
+  width: 75%;
+  margin: auto;
+}
+
+.about-container>h1 {
+  font-weight: bold;
+  font-size: 50px;
+  margin: 5px;
+}
+
+.about-container a  {
+  text-decoration: none;
+  color: #f84342;
+}
+
+.profile-container {
+  display: flex;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+img {
+  width: 25%;
+  height: 25%;
+  margin-right: 50px;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.name {
+  text-align: center;
+  font-style: italic;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 860px) {
+  .profile-container {
+    flex-wrap: wrap;
+  }
+
+  img {
+    width: 50%;
+    height: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+}
