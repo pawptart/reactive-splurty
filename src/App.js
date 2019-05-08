@@ -73,27 +73,29 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Nav 
-          toggleShowForm={this.toggleShowForm}
-          toggleShowAbout={this.toggleShowAbout}
-          showAbout={this.state.showAbout}
-          showForm={this.state.showForm}
-          goBack={this.goBack}
-        />
-        { showAbout ? 
-          <About />
-          :
-          showForm ? 
-            <Form 
-              toggleShowForm={this.toggleShowForm}
-              createQuote={this.createQuote}
-            /> 
+        <div className="content-box">
+          <Nav 
+            toggleShowForm={this.toggleShowForm}
+            toggleShowAbout={this.toggleShowAbout}
+            showAbout={this.state.showAbout}
+            showForm={this.state.showForm}
+            goBack={this.goBack}
+          />
+          { showAbout ? 
+            <About />
             :
-            <Quote 
-              getQuote={this.getQuote}
-              quote={quote}
-            />
-        }
+            showForm ? 
+              <Form 
+                toggleShowForm={this.toggleShowForm}
+                createQuote={this.createQuote}
+              /> 
+              :
+              <Quote 
+                getQuote={this.getQuote}
+                quote={quote}
+              />
+          }
+        </div>
         <Footer getQuote={this.getQuote} />
       </div>
     );

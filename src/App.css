@@ -96,12 +96,14 @@ body {
   text-decoration: underline;
 }
 
+.content-box {
+  min-height: calc(100vh - 80px);
+}
+
 .footer-container {
   background: black;
   padding-top: 15px;
   padding-bottom: 15px;
-  position: absolute;
-  bottom: 0px; 
   height: 50px;
   display: flex;
   justify-content: space-around;
